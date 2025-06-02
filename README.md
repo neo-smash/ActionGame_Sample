@@ -1,1 +1,1 @@
-# ActionGame_Sample
+# アクションゲームの設計の練習用です
