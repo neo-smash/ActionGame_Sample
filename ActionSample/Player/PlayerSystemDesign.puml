@@ -1,0 +1,92 @@
+@startuml PlayerSystemDesign
+
+!theme plain
+title Playerシステム設計図
+
+class MoveInputEventManager {
+    -Subject<Vector2> _onMove
+    -Subject<Unit> _onJump
+    -InputAction _moveAction
+    -InputAction _jumpAction
+    +IObservable<Vector2> OnMove
+    +IObservable<Unit> OnJump
+    +void Awake()
+    +void OnEnable()
+    +void OnDisable()
+}
+
+interface ICharacterMover {
+    +void Move(Vector2 dir)
+    +void Jump()
+}
+
+class GroundCharacterMover {
+    +void Move(Vector2 dir)
+    +void Jump()
+}
+
+class SwimmingCharacterMover {
+    +void Move(Vector2 dir)
+    +void Jump()
+}
+
+class CharacterMoveInputHandler {
+    -MoveInputEventManager _moveInputEventManager
+    -EnvironmentManager _environmentManager
+    -GroundCharacterMover _groundMover
+    -SwimmingCharacterMover _swimmingMover
+    +void Start()
+    -ICharacterMover GetCurrentMover()
+}
+
+class EnvironmentManager {
+    -bool _isGround
+    -bool _isInWater
+    +bool IsGround
+    +bool IsInWater
+    +void SetEnvironment(bool isGround, bool isInWater)
+}
+
+class CharacterStatusManager {
+    +enum CharacterState
+}
+
+enum CharacterState {
+    Idle
+    Running
+    Swimming
+    Jumping
+}
+
+' 継承・実装関係
+ICharacterMover <|-- GroundCharacterMover
+ICharacterMover <|-- SwimmingCharacterMover
+CharacterStatusManager +-- CharacterState
+
+' 依存関係
+CharacterMoveInputHandler --> MoveInputEventManager
+CharacterMoveInputHandler --> EnvironmentManager
+CharacterMoveInputHandler --> GroundCharacterMover
+CharacterMoveInputHandler --> SwimmingCharacterMover
+
+' 補足説明
+note right of CharacterMoveInputHandler
+  環境に応じて適切なムーバーを選択
+  - 水中: SwimmingCharacterMover
+  - 地上: GroundCharacterMover
+end note
+
+note right of MoveInputEventManager
+  UniRxを使用した
+  リアクティブな入力管理
+  
+  Observable<Vector2> OnMove
+  Observable<Unit> OnJump
+end note
+
+note bottom of EnvironmentManager
+  環境状態を管理
+  現在の地形情報を提供
+end note
+
+@enduml 

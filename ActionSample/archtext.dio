@@ -1,0 +1,106 @@
+<mxfile host="65bd71144e">
+    <diagram id="FOFrePVDa_-Fq5xkOfJG" name="Playerシステム設計図">
+        <mxGraphModel dx="2949" dy="853" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="850" math="1" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="52" value="" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-610" y="440" width="300" height="220" as="geometry"/>
+                </mxCell>
+                <mxCell id="title" value="Playerシステム設計図" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="550" y="20" width="300" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="MoveInputEventManager" value="&lt;b&gt;MoveInputEventManager&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=top;spacing=10;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="260" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="ICharacterMover" value="&lt;div style=&quot;&quot;&gt;&lt;b&gt;インターフェース&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;b style=&quot;background-color: transparent;&quot;&gt;ICharacterMover&lt;/b&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=top;spacing=10;fillColor=#E6F3FF;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="470" width="180" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;labelBorderColor=#FFFFFF;jumpSize=5;dashed=1;" parent="1" source="GroundCharacterMover" target="ICharacterMover" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" style="edgeStyle=orthogonalEdgeStyle;curved=1;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="GroundCharacterMover" target="30">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="GroundCharacterMover" value="&lt;div style=&quot;&quot;&gt;&lt;b style=&quot;background-color: transparent;&quot;&gt;GroundCharacterMover&lt;/b&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=top;spacing=10;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="590" width="180" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;dashed=1;" parent="1" source="SwimmingCharacterMover" target="ICharacterMover" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" style="edgeStyle=orthogonalEdgeStyle;curved=1;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="SwimmingCharacterMover" target="30">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="SwimmingCharacterMover" value="&lt;div style=&quot;&quot;&gt;&lt;b style=&quot;background-color: transparent;&quot;&gt;SwimmingCharacterMover&lt;/b&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=top;spacing=10;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="590" width="180" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="CharacterMoveInputHandler" target="EnvironmentManager" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="CharacterMoveInputHandler" target="MoveInputEventManager" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" style="edgeStyle=orthogonalEdgeStyle;curved=1;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="CharacterMoveInputHandler" target="ICharacterMover">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="CharacterMoveInputHandler" value="&lt;div style=&quot;&quot;&gt;&lt;b style=&quot;background-color: transparent;&quot;&gt;CharacterMoveInputHandler&lt;/b&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=top;spacing=10;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="360" width="180" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="EnvironmentManager" value="&lt;div style=&quot;&quot;&gt;&lt;b style=&quot;background-color: transparent;&quot;&gt;EnvironmentManager&lt;/b&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=top;spacing=10;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="360" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="CharacterState" value="&lt;div&gt;&lt;span style=&quot;font-weight: bold; background-color: transparent;&quot;&gt;enumでステータスの宣言&lt;/span&gt;&lt;/div&gt;&lt;b&gt;CharacterState&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=top;spacing=10;fillColor=#FFF2CC;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="724.38" width="200" height="51.25" as="geometry"/>
+                </mxCell>
+                <mxCell id="note1" value="イベントを購読して、&lt;br&gt;Move処理を呼び出す" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;size=15;fillColor=#FFFFCC;" parent="1" vertex="1">
+                    <mxGeometry x="-170" y="360" width="190" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="note2" value="移動に関するキー入力イベント&lt;div&gt;を受け取り、イベントを発行&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;size=15;fillColor=#FFFFCC;" parent="1" vertex="1">
+                    <mxGeometry x="-170" y="250" width="190" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="note3" value="地上か水中なのか&lt;div&gt;判定をする&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;size=15;fillColor=#FFFFCC;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="290" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" style="edgeStyle=orthogonalEdgeStyle;curved=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="30" target="CharacterState">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="&lt;div&gt;&lt;b&gt;プレイヤーの状態管理&lt;/b&gt;&lt;/div&gt;&lt;b&gt;CharacterStateManager&lt;/b&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="730" width="180" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="地面にいる状態" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;size=15;fillColor=#FFFFCC;" vertex="1" parent="1">
+                    <mxGeometry x="-100" y="585" width="110" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="水中にいる状態" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;size=15;fillColor=#FFFFCC;" vertex="1" parent="1">
+                    <mxGeometry x="490" y="587.5" width="110" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" style="edgeStyle=orthogonalEdgeStyle;curved=1;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="43" target="30">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="&lt;div&gt;&lt;b&gt;状態を購読してアニメーションを切り替える処理&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b style=&quot;background-color: transparent;&quot;&gt;AnimationController&lt;/b&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="830" width="180" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" style="edgeStyle=orthogonalEdgeStyle;curved=1;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="47" target="48">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="&lt;div&gt;&lt;b&gt;プレイヤーのパラメーター管理&lt;/b&gt;&lt;/div&gt;&lt;b&gt;CharacterParameterManager&lt;/b&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-555" y="475" width="180" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="&lt;div&gt;&lt;b&gt;スクリプタブルオブジェクト&lt;/b&gt;&lt;/div&gt;&lt;b&gt;CharacterParameter&lt;/b&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-555" y="580.01" width="180" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="モデル" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="-495" y="410" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-610" y="730" width="300" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" value="プレゼンター" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="-515" y="700" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" value="&lt;div&gt;&lt;b&gt;スクリプタブルオブジェクト&lt;/b&gt;&lt;/div&gt;&lt;b&gt;CharacterParameter&lt;/b&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-555" y="760" width="180" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
