@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// 水の中でのキャラクターの移動を管理する
+/// </summary>
 public class SwimmingCharacterMover : MonoBehaviour, ICharacterMover
 {
     [SerializeField] private CharacterStateManager _characterStateManager;
@@ -14,14 +17,12 @@ public class SwimmingCharacterMover : MonoBehaviour, ICharacterMover
 
     public void Move(Vector2 dir)
     {
-        Debug.Log("移動");
-        _characterStateManager.SetState(CharacterState.Running);
+
     }
 
     public void Jump()
     {
-        Debug.Log("ジャンプ");
-        _characterStateManager.SetState(CharacterState.Jumping);
+
     }
 
     public void SetParameters(CharacterParameterManager parameters)

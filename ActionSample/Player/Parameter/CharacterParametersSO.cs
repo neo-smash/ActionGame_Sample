@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// キャラクターのパラメータのスクリプタブルオブジェクト
+/// </summary>
 [CreateAssetMenu(fileName = "CharacterParameter", menuName = "ScriptableObjects/CharacterParameter", order = 1)]
 public class CharacterParametersSO : ScriptableObject
 {

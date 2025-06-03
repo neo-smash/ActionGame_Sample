@@ -1,22 +1,20 @@
 using UnityEngine;
 
+/// <summary>
+/// キャラクターのいる場所を管理する
+/// </summary>
 public class EnvironmentManager : MonoBehaviour
 {
-    private bool _isGround;
-    private bool _isInWater;
+    private bool _isGroundArea;
+    private bool _isInWaterArea;
 
-    public bool IsGround => _isGround;
-    public bool IsInWater => _isInWater;
+    public bool IsGroundArea => _isGroundArea;
+    public bool IsInWaterArea => _isInWaterArea;
 
     private void Awake()
     {
-        _isGround = true;
-        _isInWater = false;
-    }
-
-    public void SetEnvironment(bool isGround, bool isInWater)
-    {
-        _isGround = isGround;
-        _isInWater = isInWater;
+        // デバッグ用
+        _isGroundArea = true;
+        _isInWaterArea = false;
     }
 }

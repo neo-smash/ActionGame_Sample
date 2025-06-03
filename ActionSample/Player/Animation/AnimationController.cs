@@ -1,6 +1,9 @@
 using UnityEngine;
 using UniRx;
 
+/// <summary>
+/// キャラクターのアニメーションを管理する
+/// </summary>
 public class AnimationController : MonoBehaviour
 {
     [SerializeField] private CharacterStateManager _characterStateManager;

@@ -1,6 +1,9 @@
 using UnityEngine;
 using UniRx;
 
+/// <summary>
+/// キャラクターのパラメータを管理する
+/// </summary>
 public class CharacterParameterManager : MonoBehaviour
 {
     [SerializeField] private CharacterParametersSO _parameterSO;
@@ -11,7 +14,6 @@ public class CharacterParameterManager : MonoBehaviour
 
     private void Awake()
     {
-        // SOから初期値で初期化（プレイ中はこのインスタンスで操作）
         CurrentHP = new ReactiveProperty<float>(_parameterSO.MaxHP);
         MoveSpeed = new ReactiveProperty<float>(_parameterSO.MoveSpeed);
         JumpPower = new ReactiveProperty<float>(_parameterSO.JumpPower);

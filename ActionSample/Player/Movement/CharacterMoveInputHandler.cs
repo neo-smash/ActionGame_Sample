@@ -1,6 +1,9 @@
 using UnityEngine;
 using UniRx;
 
+/// <summary>
+/// キャラクターの移動入力を購読して、移動を実行する
+/// </summary>
 public class CharacterMoveInputHandler : MonoBehaviour
 {
     [SerializeField] private MoveInputEventManager _moveInputEventManager;
@@ -24,7 +27,7 @@ public class CharacterMoveInputHandler : MonoBehaviour
 
     private ICharacterMover GetCurrentMover()
     {
-        return _environmentManager.IsInWater ?
+        return _environmentManager.IsInWaterArea ?
         (ICharacterMover)_swimmingMover :
         (ICharacterMover)_groundMover;
     }

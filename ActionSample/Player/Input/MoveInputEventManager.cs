@@ -3,6 +3,9 @@ using UnityEngine.InputSystem;
 using System;
 using UniRx;
 
+/// <summary>
+/// キャラクターの移動入力を管理する
+/// </summary>
 public class MoveInputEventManager : MonoBehaviour
 {
     [SerializeField] private PlayerInput _playerInput;

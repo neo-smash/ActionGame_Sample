@@ -1,6 +1,9 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+/// <summary>
+/// 移動の処理にパラメーターを渡す
+/// </summary>
 public class CharacterMoverPresenter : MonoBehaviour
 {
     [SerializeField] private CharacterParameterManager _parameterManager;
